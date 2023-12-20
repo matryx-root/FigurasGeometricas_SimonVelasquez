@@ -1,0 +1,41 @@
+<!-- circulo.component.html -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Circulo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-card-title>Información del Círculo</ion-card-title>
+    <ion-card-header>
+
+
+      <img src="../../assets/circulo.png" alt="Círculo" width="200">
+      <p>
+        <strong>Círculo:</strong>
+        El perímetro de un círculo es la longitud de la línea que forma su borde.
+        Donde: P = π * d (o P = 2 * π * r)
+      </p>
+    </ion-card-header>
+    <ion-card-content>
+
+      <!-- Puedes colocar información adicional sobre el círculo aquí si es necesario -->
+      <form (ngSubmit)="calcularPerimetro()" novalidate>
+        <ion-item>
+          <ion-label position="floating">Radio</ion-label>
+          <ion-input [(ngModel)]="radio" type="number" name="radio" aria-label="Radio"></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" type="submit">Calcular Perímetro</ion-button>
+      </form>
+
+      <ion-item *ngIf="perimetro">
+        <ion-label>El Perímetro es: {{ perimetro.toFixed(2) }}(cm) </ion-label>
+
+      </ion-item>
+    </ion-card-content>
+</ion-card>
+
